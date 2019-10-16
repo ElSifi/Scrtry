@@ -11,6 +11,8 @@
 		D81015832349067400159075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81015822349067400159075 /* ViewController.swift */; };
 		D81015852349067500159075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81015842349067500159075 /* Assets.xcassets */; };
 		D81015882349067500159075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81015862349067500159075 /* Main.storyboard */; };
+		D8101591234908E200159075 /* home-bg-new.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8101590234908E200159075 /* home-bg-new.jpg */; };
+		D8607683234945DE00929AEA /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8607682234945DE00929AEA /* View.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		D81015872349067500159075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D81015892349067500159075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D810158A2349067500159075 /* scrtry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = scrtry.entitlements; sourceTree = "<group>"; };
+		D8101590234908E200159075 /* home-bg-new.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "home-bg-new.jpg"; sourceTree = "<group>"; };
+		D8607682234945DE00929AEA /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +58,13 @@
 			isa = PBXGroup;
 			children = (
 				D81015802349067400159075 /* AppDelegate.swift */,
+				D8101590234908E200159075 /* home-bg-new.jpg */,
 				D81015822349067400159075 /* ViewController.swift */,
 				D81015842349067500159075 /* Assets.xcassets */,
 				D81015862349067500159075 /* Main.storyboard */,
 				D81015892349067500159075 /* Info.plist */,
 				D810158A2349067500159075 /* scrtry.entitlements */,
+				D8607682234945DE00929AEA /* View.xib */,
 			);
 			path = scrtry;
 			sourceTree = "<group>";
@@ -95,6 +101,11 @@
 				TargetAttributes = {
 					D810157C2349067400159075 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -121,7 +132,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8607683234945DE00929AEA /* View.xib in Resources */,
 				D81015852349067500159075 /* Assets.xcassets in Resources */,
+				D8101591234908E200159075 /* home-bg-new.jpg in Resources */,
 				D81015882349067500159075 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

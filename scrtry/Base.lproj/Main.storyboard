@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="scrtry" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,15 +704,57 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="scrtry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="629" height="453"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="JQu-hC-6M8">
+                                <rect key="frame" x="-645" y="-313" width="1920" height="1080"/>
+                                <subviews>
+                                    <imageView autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1vr-wZ-ddO" customClass="ImageAspectFillView" customModule="scrtry" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="home-bg-new" id="p3L-bJ-VHG"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1vr-wZ-ddO" firstAttribute="top" secondItem="JQu-hC-6M8" secondAttribute="top" id="0xY-s7-6Ah"/>
+                                    <constraint firstAttribute="height" constant="1080" id="DLc-lg-eJb"/>
+                                    <constraint firstAttribute="trailing" secondItem="1vr-wZ-ddO" secondAttribute="trailing" id="IxX-uz-Uo9"/>
+                                    <constraint firstItem="1vr-wZ-ddO" firstAttribute="leading" secondItem="JQu-hC-6M8" secondAttribute="leading" id="WQc-05-Q1r"/>
+                                    <constraint firstAttribute="width" constant="1920" id="hKG-b1-pBl"/>
+                                    <constraint firstAttribute="bottom" secondItem="1vr-wZ-ddO" secondAttribute="bottom" id="sL2-Od-RJr"/>
+                                </constraints>
+                            </customView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HDn-55-MFA">
+                                <rect key="frame" x="274" y="209" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Set BG" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vma-vv-AGN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setBGAction:" target="XfG-lQ-9wD" id="DSi-d5-CSg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="HDn-55-MFA" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="80K-oY-9yp"/>
+                            <constraint firstItem="JQu-hC-6M8" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="I4D-qL-Bxn"/>
+                            <constraint firstItem="JQu-hC-6M8" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="KLn-tp-dE1"/>
+                            <constraint firstItem="HDn-55-MFA" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="gLM-V0-jCa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageCell" destination="p3L-bJ-VHG" id="pDN-Qo-7Te"/>
+                        <outlet property="theImage" destination="1vr-wZ-ddO" id="Di7-Pz-agT"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-39.5" y="732.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home-bg-new" width="1920" height="913"/>
+    </resources>
 </document>
