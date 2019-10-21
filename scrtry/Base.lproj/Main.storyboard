@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="System colors introduced in macOS 10.13" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -752,6 +753,60 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39.5" y="732.5"/>
+        </scene>
+        <!--Desktop Wallpaper Controller-->
+        <scene sceneID="86x-RQ-XSj">
+            <objects>
+                <viewController storyboardIdentifier="DesktopWallpaperController" id="VYX-tl-ARM" customClass="DesktopWallpaperController" customModule="scrtry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="T22-jD-d31">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="913"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="isF-qS-YRa">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="913"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="home-bg-new" id="pYi-A0-q6c"/>
+                            </imageView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ves-cd-5EX" customClass="ColoredView" customModule="scrtry" customModuleProvider="target">
+                                <rect key="frame" x="20" y="648" width="1000" height="245"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qJX-12-mod">
+                                        <rect key="frame" x="937" y="10" width="55" height="27"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="olV-lN-AfP">
+                                            <font key="font" metaFont="system" size="22"/>
+                                            <color key="backgroundColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1000" id="84j-Ir-Tzg"/>
+                                    <constraint firstAttribute="trailing" secondItem="qJX-12-mod" secondAttribute="trailing" constant="10" id="Kuf-KX-G4b"/>
+                                    <constraint firstAttribute="bottom" secondItem="qJX-12-mod" secondAttribute="bottom" constant="10" id="M3r-OS-ij4"/>
+                                    <constraint firstAttribute="height" constant="245" id="exd-Xz-yza"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.21723701584507044" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="isF-qS-YRa" secondAttribute="trailing" id="Kvh-dA-PJm"/>
+                            <constraint firstItem="isF-qS-YRa" firstAttribute="top" secondItem="T22-jD-d31" secondAttribute="top" id="NcM-id-gCy"/>
+                            <constraint firstItem="Ves-cd-5EX" firstAttribute="top" secondItem="T22-jD-d31" secondAttribute="top" constant="20" id="TwA-Zy-VIc"/>
+                            <constraint firstItem="isF-qS-YRa" firstAttribute="leading" secondItem="T22-jD-d31" secondAttribute="leading" id="cUu-JZ-vDh"/>
+                            <constraint firstAttribute="bottom" secondItem="isF-qS-YRa" secondAttribute="bottom" id="iGx-64-54D"/>
+                            <constraint firstItem="Ves-cd-5EX" firstAttribute="leading" secondItem="T22-jD-d31" secondAttribute="leading" constant="20" id="n5c-t3-W25"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="container" destination="Ves-cd-5EX" id="06k-X4-EuR"/>
+                        <outlet property="theBGImageVIew" destination="isF-qS-YRa" id="2ef-by-OXC"/>
+                    </connections>
+                </viewController>
+                <customObject id="RnQ-mI-v3S" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1314" y="724"/>
         </scene>
     </scenes>
     <resources>

@@ -80,7 +80,7 @@ class ViewController: NSViewController {
         
         
         
-        getCurrentDesktop()
+        
         
         let random = randomString(length: 10)
         sender.title = random
@@ -91,14 +91,14 @@ class ViewController: NSViewController {
         
         let oldBackground = screens
         
-//        let fakeVC = self.storyboard!.instantiateController(withIdentifier: "ViewController") as! ViewController
-//        fakeVC.preloadedImage = self.theImage.image
+        let fakeVC = self.storyboard!.instantiateController(withIdentifier: "DesktopWallpaperController") as! DesktopWallpaperController
+        fakeVC.preloadedImage = getCurrentDesktop()
         let newRect = NSRect(x:0,y:0,width:1920,height:1080)
-        self.view.window?.setFrame(newRect, display: true)
+        fakeVC.view.window?.setFrame(newRect, display: true)
         
         
 
-        let screenShot = NSImage.init(data: self.view.dataWithPDF(inside: self.view.bounds))!
+        let screenShot = NSImage.init(data: fakeVC.view.dataWithPDF(inside: fakeVC.view.bounds))!
         
         let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 
@@ -118,7 +118,8 @@ class ViewController: NSViewController {
     }
     
     
-    func getCurrentDesktop(){
+    func getCurrentDesktop() -> NSImage?{
+        var theImage : NSImage? = nil
         
         var sqliteData : [String] = []
         
@@ -153,14 +154,15 @@ class ViewController: NSViewController {
         do {
             let imageData = try Data(contentsOf: fileURL)
             let image = NSImage(data: imageData)
-            self.theImage.image = image
+            //self.theImage.image = image
+            theImage = image
         } catch {
             print("Error loading image : \(error)")
         }
         
         
         sqlite3_close(db)
-        
+        return theImage
         
     }
 
